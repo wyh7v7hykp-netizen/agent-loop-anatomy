@@ -873,10 +873,10 @@ stage.addEventListener("click", (event) => {
 stage.addEventListener("keydown", (event) => {
   const here = STATIONS.reduce((b, s, i) => (Math.abs(s - target) < Math.abs(STATIONS[b] - target) ? i : b), 0);
   let to = null;
-  if (event.key === "ArrowRight" || event.key === "ArrowUp") to = Math.min(STATIONS.length, here + 1);
+  if (event.key === "ArrowRight" || event.key === "ArrowUp") to = Math.min(STATIONS.length - 1, here + 1);
   if (event.key === "ArrowLeft" || event.key === "ArrowDown") to = Math.max(0, here - 1);
   if (event.key === "Home") to = 0;
-  if (event.key === "End") to = STATIONS.length;
+  if (event.key === "End") to = STATIONS.length - 1;
   if (to === null) return;
   event.preventDefault();
   steer(to < STATIONS.length ? STATIONS[to] : REACH[1]);

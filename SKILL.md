@@ -45,12 +45,22 @@ node scripts/lines.mjs examples/agent-loop/agent-loop.html
 node scripts/lines.mjs examples/rotary-check-machine/rotary-check-machine.html
 ```
 
+## Make an animated GIF
+
+```bash
+# Record keyboard-driven interaction and render a GIF
+node scripts/gif-capture.mjs examples/agent-loop/agent-loop.html --out examples/agent-loop/agent-loop.gif
+node scripts/gif-capture.mjs examples/rotary-check-machine/rotary-check-machine.html --out examples/rotary-check-machine/rotary-check-machine.gif
+```
+
+The script focuses the figure, sends arrow-key / click actions, captures PNG frames with Chrome CDP, and stitches them into a palette-optimized GIF with ffmpeg.
+
 ## Files
 
-- `examples/agent-loop/build.mjs`
-- `examples/rotary-check-machine/build.mjs`
+- `examples/agent-loop/build.mjs`, `examples/agent-loop/agent-loop.gif`
+- `examples/rotary-check-machine/build.mjs`, `examples/rotary-check-machine/rotary-check-machine.gif`
 - `kit/iso-kit.mjs`, `kit/iso-kit.ts`, `kit/iso.css`
-- `scripts/inline-kit.mjs`, `scripts/capture.mjs`, `scripts/lines.mjs`
+- `scripts/inline-kit.mjs`, `scripts/capture.mjs`, `scripts/lines.mjs`, `scripts/gif-capture.mjs`
 
 ## Notes
 
